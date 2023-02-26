@@ -5,11 +5,13 @@
   </head>
   <body>
     <h1>Messages: </h1>
-    <p><%= message.map(e => {
-      return (`
-      ${e.user} said: ${e.text} at ${e.added}////////////
-      `)
-    }) %></p>
+    <p>
+      <ul>
+        <% message.map(e => { %>
+         <li><%= `${e.user} said: ${e.text} at ${e.added}`%></li>
+        <% })%>
+      </ul>
+    </p>
     <button onclick="location.href='/new'">Add new message</button>
   </body>
 </html>
